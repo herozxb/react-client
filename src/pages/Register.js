@@ -40,10 +40,10 @@ function Register(props) {
   return (
     <div className="form-container">
       <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
-        <h1>Register</h1>
+        <h1>注册页面</h1>
         <Form.Input
-          label="Username"
-          placeholder="Username.."
+          label="用户名"
+          placeholder="名称..."
           name="username"
           type="text"
           value={values.username}
@@ -51,8 +51,8 @@ function Register(props) {
           onChange={onChange}
         />
         <Form.Input
-          label="Email"
-          placeholder="Email.."
+          label="邮箱"
+          placeholder="邮箱..."
           name="email"
           type="email"
           value={values.email}
@@ -60,8 +60,8 @@ function Register(props) {
           onChange={onChange}
         />
         <Form.Input
-          label="Password"
-          placeholder="Password.."
+          label="密码"
+          placeholder="密码..."
           name="password"
           type="password"
           value={values.password}
@@ -69,8 +69,8 @@ function Register(props) {
           onChange={onChange}
         />
         <Form.Input
-          label="Confirm Password"
-          placeholder="Confirm Password.."
+          label="再次输入密码"
+          placeholder="密码..."
           name="confirmPassword"
           type="password"
           value={values.confirmPassword}

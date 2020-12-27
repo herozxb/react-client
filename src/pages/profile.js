@@ -28,6 +28,7 @@ function Profile(props) {
   const context = useContext(AuthContext);
   var username = null;
   var nologin = null;
+  var createdAt = null;
   if (context.user===null)
   {
     username = "default";
@@ -38,6 +39,7 @@ function Profile(props) {
   {
     username = context.user.username;
     nologin = false;
+    createdAt = context.user.createdAt;
   }
 
   const {
@@ -89,8 +91,8 @@ function Profile(props) {
               <Card>
                 <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
                 <Card.Content>
-                  <Card.Header>Daniel</Card.Header>
-                  <Card.Meta>Joined in 2016</Card.Meta>
+                  <Card.Header>{context.user.username}</Card.Header>
+                  <Card.Meta>{moment(context.user.createdAt).fromNow(true)}</Card.Meta>
                   <Card.Description>
                     Daniel is a comedian living in Nashville.
                   </Card.Description>

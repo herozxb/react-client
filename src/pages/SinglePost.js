@@ -19,6 +19,8 @@ import MyPopup from '../util/MyPopup';
 
 function SinglePost(props) {
   const postId = props.match.params.postId;
+  //console.log("====1======")
+  //console.log(postId)
   const { user } = useContext(AuthContext);
   const commentInputRef = useRef(null);
 

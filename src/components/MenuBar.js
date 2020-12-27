@@ -18,29 +18,35 @@ function MenuBar() {
       <Menu.Item name={user.username} active as={Link} to="/" />
 
       <Menu.Menu position="right">
-        <Menu.Item name="logout" onClick={logout} />
+        <Menu.Item
+          name="个人主页"
+          active={activeItem === 'profile'}
+          onClick={handleItemClick}
+          as={Link}
+          to="/profile"
+        />
+        <Menu.Item name="登出" onClick={logout} />
       </Menu.Menu>
     </Menu>
   ) : (
     <Menu pointing secondary size="massive" color="teal">
       <Menu.Item
-        name="home"
+        name="主页"
         active={activeItem === 'home'}
         onClick={handleItemClick}
         as={Link}
         to="/"
       />
-
       <Menu.Menu position="right">
         <Menu.Item
-          name="login"
+          name="登入"
           active={activeItem === 'login'}
           onClick={handleItemClick}
           as={Link}
           to="/login"
         />
         <Menu.Item
-          name="register"
+          name="注册"
           active={activeItem === 'register'}
           onClick={handleItemClick}
           as={Link}

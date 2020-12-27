@@ -30,17 +30,17 @@ function PostForm() {
   return (
     <>
       <Form onSubmit={onSubmit}>
-        <h2>Create a post:</h2>
+        <h2>输入博文:</h2>
         <Form.Field>
           <Form.Input
-            placeholder="Hi World!"
+            placeholder="世界 你好!"
             name="body"
             onChange={onChange}
             value={values.body}
             error={error ? true : false}
           />
           <Button type="submit" color="teal">
-            Submit
+            发布
           </Button>
         </Form.Field>
       </Form>

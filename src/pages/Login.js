@@ -5,6 +5,8 @@ import gql from 'graphql-tag';
 
 import { AuthContext } from '../context/auth';
 import { useForm } from '../util/hooks';
+import profile from './profile';
+
 
 function Login(props) {
   const context = useContext(AuthContext);
@@ -16,12 +18,8 @@ function Login(props) {
   });
 
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
-    update(
-      _,
-      {
-        data: { login: userData }
-      }
-    ) {
+    update( _, { data: { login: userData } } ) 
+    {
       context.login(userData);
       props.history.push('/');
     },

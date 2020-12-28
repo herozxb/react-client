@@ -15,6 +15,9 @@ import Register from './pages/Register';
 import SinglePost from './pages/SinglePost';
 import profile from './pages/profile';
 
+import Chat from './components/Chat/Chat';
+import Join from './components/Join/Join';
+
 function App() {
   return (
     <AuthProvider>
@@ -26,6 +29,8 @@ function App() {
           <AuthRoute exact path="/register" component={Register} />
           <Route exact path="/posts/:postId" component={SinglePost} />
           <Route exact path="/profile" component={profile} />
+          <Route path="/join" exact component={Join} />
+          <Route path="/chat" component={Chat} />
         </Container>
       </Router>
     </AuthProvider>

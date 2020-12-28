@@ -78,7 +78,7 @@ function Register(props) {
           onChange={onChange}
         />
         <Button type="submit" primary>
-          Register
+          注册
         </Button>
       </Form>
       {Object.keys(errors).length > 0 && (

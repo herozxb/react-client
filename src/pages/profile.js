@@ -1,4 +1,5 @@
 import React, { useContext, useState, fetchPolicy } from 'react';
+import { Link } from 'react-router-dom'
 import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import moment from 'moment';
@@ -12,7 +13,8 @@ import {
   Label,
   Menu, 
   Segment,
-  Transition
+  Transition,
+  Input
 } from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
@@ -56,6 +58,13 @@ function Profile(props) {
   function deletePostCallback() {
     props.history.push('/');
   }
+
+  const [activeItem, setActiveItem] = useState("home");
+
+  const setActiveItemOnClick = (name) => {
+
+  setActiveItem(name);
+  };
 
 
 

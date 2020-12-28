@@ -17,7 +17,7 @@ function Home() {
   return (
     <Grid columns={1}>
       <Grid.Row className="page-title">
-        <h1>最新 博文</h1>
+        <h1>最新</h1>
       </Grid.Row>
       <Grid.Row>
         {user && (
@@ -26,7 +26,7 @@ function Home() {
           </Grid.Column>
         )}
         {loading ? (
-          <h1>读取 博文...</h1>
+          <h1>loading...</h1>
         ) : (
           <Transition.Group>
             {posts &&

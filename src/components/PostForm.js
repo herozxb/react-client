@@ -30,7 +30,7 @@ function PostForm() {
   return (
     <>
       <Form onSubmit={onSubmit}>
-        <h2>输入博文:</h2>
+        <h2>输入你的思想:</h2>
         <Form.Field>
           <Form.Input
             placeholder="世界 你好!"

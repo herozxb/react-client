@@ -3,6 +3,11 @@ import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../context/auth';
+import io from "socket.io-client";
+
+const ENDPOINT = 'http://192.168.1.101:2001';
+
+let socket = io(ENDPOINT);
 
 function MenuBar() {
   const { user, logout } = useContext(AuthContext);
@@ -11,17 +16,38 @@ function MenuBar() {
   const path = pathname === '/' ? 'home' : pathname.substr(1);
   const [activeItem, setActiveItem] = useState(path);
 
-  const handleItemClick = (e, { name }) => setActiveItem(name);
+  const handleItemClick = (name) => {
 
+  setActiveItem(name);
+  
+  };
+
+  const chat_link = user ? ("/chat?name="+user.username+"&room=room"):("/chat?name=default&room=room");
   const menuBar = user ? (
-    <Menu pointing secondary size="massive" color="teal">
-      <Menu.Item name={user.username} active as={Link} to="/" />
+    <Menu pointing size="massive" color="teal">
+
+        <Menu.Item
+          name={user.username}
+          active={activeItem === 'home'}
+          onClick={() => handleItemClick("home")}
+          as={Link}
+          to="/"
+        />
+
+
 
       <Menu.Menu position="right">
         <Menu.Item
-          name="个人主页"
+          name="聊天"
+          active={activeItem === 'chat'}
+          onClick={() => handleItemClick("chat")}
+          as={Link}
+          to={chat_link}
+        />
+        <Menu.Item
+          name="个人"
           active={activeItem === 'profile'}
-          onClick={handleItemClick}
+          onClick={() => handleItemClick("profile")}
           as={Link}
           to="/profile"
         />
@@ -29,11 +55,11 @@ function MenuBar() {
       </Menu.Menu>
     </Menu>
   ) : (
-    <Menu pointing secondary size="massive" color="teal">
+    <Menu pointing size="massive" color="teal">
       <Menu.Item
         name="主页"
         active={activeItem === 'home'}
-        onClick={handleItemClick}
+        onClick={() => handleItemClick("home")}
         as={Link}
         to="/"
       />
@@ -41,14 +67,14 @@ function MenuBar() {
         <Menu.Item
           name="登入"
           active={activeItem === 'login'}
-          onClick={handleItemClick}
+          onClick={() => handleItemClick("login")}
           as={Link}
           to="/login"
         />
         <Menu.Item
           name="注册"
           active={activeItem === 'register'}
-          onClick={handleItemClick}
+          onClick={() => handleItemClick("register")}
           as={Link}
           to="/register"
         />

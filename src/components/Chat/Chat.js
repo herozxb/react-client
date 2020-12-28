@@ -9,7 +9,7 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-const ENDPOINT = 'http://192.168.1.101:2001';
+const ENDPOINT = 'http://120.53.220.237:2001';
 
 let socket;
 

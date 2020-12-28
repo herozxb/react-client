@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Divider, Header, Icon } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -30,7 +30,12 @@ function PostForm() {
   return (
     <>
       <Form onSubmit={onSubmit}>
-        <h2>输入你的思想:</h2>
+          <Divider horizontal>
+            <Header as='h3'>
+              <Icon name='comments' color="blue"/>
+                发表 你的 思想
+            </Header>
+          </Divider>
         <Form.Field>
           <Form.Input
             placeholder="世界 你好!"
@@ -39,7 +44,7 @@ function PostForm() {
             value={values.body}
             error={error ? true : false}
           />
-          <Button type="submit" color="teal">
+          <Button type="submit" color="blue">
             发布
           </Button>
         </Form.Field>

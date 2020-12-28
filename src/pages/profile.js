@@ -14,7 +14,8 @@ import {
   Menu, 
   Segment,
   Transition,
-  Input
+  Input,
+  Divider
 } from 'semantic-ui-react';
 
 import { AuthContext } from '../context/auth';
@@ -127,6 +128,9 @@ function Profile(props) {
                   : 
                   (
                   <Transition.Group>
+                    <Grid.Column>
+                      <Divider horizontal><h3>最新</h3></Divider>
+                    </Grid.Column>
                     {posts &&
                       posts.map((post) => (
                         <Grid.Column key={post.id} style={{ marginBottom: 20 }}>

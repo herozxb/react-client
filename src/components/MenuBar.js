@@ -24,7 +24,7 @@ function MenuBar() {
 
   const chat_link = user ? ("/chat?name="+user.username+"&room=room"):("/chat?name=default&room=room");
   const menuBar = user ? (
-    <Menu pointing size="massive" color="teal">
+    <Menu pointing size="massive" color="blue">
 
         <Menu.Item
           name={user.username}
@@ -55,7 +55,7 @@ function MenuBar() {
       </Menu.Menu>
     </Menu>
   ) : (
-    <Menu pointing size="massive" color="teal">
+    <Menu pointing size="massive" color="blue">
       <Menu.Item
         name="主页"
         active={activeItem === 'home'}

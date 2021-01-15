@@ -46,7 +46,9 @@ const options = [
 
   //////////////////////////////////////////////////////////
   //Thought Area
-  const [areaValues,setAreaValues] = useState("default");
+  const [areaValues,setAreaValues] = useState("Self_improvement");
+  console.log("====areaValues====");
+  console.log(areaValues);
   const on_change_for_thought_area = (e, { value }) => 
   {
     //console.log(value);
@@ -61,24 +63,14 @@ const options = [
   //*/
 
   let thoughtArea = "Self_improvement";
-
-  useEffect(() => {
-      console.log("====useEffect0.1======");
-      thoughtArea = "Relationship"
-      console.log(thoughtArea);
-  });
-
-
-
-
-
+  console.log(thoughtArea);
   const {
     loading,
     data: { getAreaPosts: posts } 
   } = useQuery(FETCH_AREA_QUERY,
     {
       variables: {
-        thoughtArea
+        thoughtArea : areaValues
     },
   }
   );

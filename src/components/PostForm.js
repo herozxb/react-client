@@ -136,19 +136,19 @@ function PostForm( { area, onAreaChange } ) {
           <Divider horizontal>
             <Header as='h3'>
               <Icon name='comments' color="blue"/>
-                发表 你的 思想
+                Post your Thought
             </Header>
           </Divider>
         <Form.Field>
           <Form.Input
-            placeholder="世界 你好!"
+            placeholder="Hello World!"
             name="body"
             onChange={on_change_for_text}
             value={texts.body}
             error={error ? true : false}
           />
           <Button type="submit" color="blue">
-            发布
+            submit
           </Button>
         </Form.Field>
       </Form>

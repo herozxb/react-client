@@ -8,8 +8,10 @@ import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
   //uri: 'http://120.53.220.237:5000'
-  //uri: 'http://192.168.1.104:5000'
-  uri: 'http://thought-area.herokuapp.com:5000'
+  uri: 'http://192.168.1.104:5000'
+  //uri: 'https://144.202.12.238:5000'
+  
+  //uri: 'http://thought-area.herokuapp.com:5000'
 });
 
 const authLink = setContext(() => {

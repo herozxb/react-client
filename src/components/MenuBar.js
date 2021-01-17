@@ -38,26 +38,26 @@ function MenuBar() {
 
       <Menu.Menu position="right">
         <Menu.Item
-          name="聊天"
+          name="Chat"
           active={activeItem === 'chat'}
           onClick={() => handleItemClick("chat")}
           as={Link}
           to={chat_link}
         />
         <Menu.Item
-          name="个人"
+          name="Profile"
           active={activeItem === 'profile'}
           onClick={() => handleItemClick("profile")}
           as={Link}
           to="/profile"
         />
-        <Menu.Item name="登出" onClick={logout} />
+        <Menu.Item name="Logout" onClick={logout} />
       </Menu.Menu>
     </Menu>
   ) : (
     <Menu pointing size="massive" color="blue">
       <Menu.Item
-        name="主页"
+        name="Main"
         active={activeItem === 'home'}
         onClick={() => handleItemClick("home")}
         as={Link}
@@ -65,14 +65,14 @@ function MenuBar() {
       />
       <Menu.Menu position="right">
         <Menu.Item
-          name="登入"
+          name="Login"
           active={activeItem === 'login'}
           onClick={() => handleItemClick("login")}
           as={Link}
           to="/login"
         />
         <Menu.Item
-          name="注册"
+          name="Register"
           active={activeItem === 'register'}
           onClick={() => handleItemClick("register")}
           as={Link}

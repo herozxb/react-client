@@ -36,10 +36,10 @@ function Login(props) {
   return (
     <div className="form-container">
       <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
-        <h1>登入页面</h1>
+        <h1>Login</h1>
         <Form.Input
-          label="用户名"
-          placeholder="名称..."
+          label="Username"
+          placeholder="username..."
           name="username"
           type="text"
           value={values.username}
@@ -47,8 +47,8 @@ function Login(props) {
           onChange={onChange}
         />
         <Form.Input
-          label="密码"
-          placeholder="密码..."
+          label="Password"
+          placeholder="password..."
           name="password"
           type="password"
           value={values.password}
@@ -56,7 +56,7 @@ function Login(props) {
           onChange={onChange}
         />
         <Button type="submit" primary>
-          登入
+          submit
         </Button>
       </Form>
       {Object.keys(errors).length > 0 && (

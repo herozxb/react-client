@@ -129,7 +129,7 @@ function Profile(props) {
                   (
                   <Transition.Group>
                     <Grid.Column>
-                      <Divider horizontal><h3>最新</h3></Divider>
+                      <Divider horizontal><h3>New Post</h3></Divider>
                     </Grid.Column>
                     {posts &&
                       posts.map((post) => (

@@ -10,8 +10,8 @@ import { FETCH_POSTS_QUERY, FETCH_AREA_QUERY } from '../util/graphql';
 function PostForm( { area, onAreaChange } ) {
 
 
-  console.log("=========function_iput===========");
-  console.log(area);
+  //console.log("=========function_iput===========");
+  //console.log(area);
   //const { values, onChange, onSubmit } = useForm(createPostCallback, {
   //  body: ''
   //});

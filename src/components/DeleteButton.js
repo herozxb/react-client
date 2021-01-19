@@ -3,10 +3,13 @@ import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 import { Button, Confirm, Icon } from 'semantic-ui-react';
 
-import { FETCH_POSTS_QUERY } from '../util/graphql';
+import { FETCH_POSTS_QUERY, FETCH_AREA_QUERY } from '../util/graphql';
 import MyPopup from '../util/MyPopup';
 
-function DeleteButton({ postId, commentId, callback }) {
+function DeleteButton({ postId, commentId, callback, area }) {
+
+  console.log("===========1.DeleteButton============");
+  console.log(area);
   const [confirmOpen, setConfirmOpen] = useState(false);
 
   const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
@@ -16,10 +19,14 @@ function DeleteButton({ postId, commentId, callback }) {
       setConfirmOpen(false);
       if (!commentId) {
         const data = proxy.readQuery({
-          query: FETCH_POSTS_QUERY
+          query: FETCH_AREA_QUERY,
+          variables:{ thoughtArea : area}
         });
-        data.getPosts = data.getPosts.filter((p) => p.id !== postId);
-        proxy.writeQuery({ query: FETCH_POSTS_QUERY, data });
+        data.getAreaPosts = data.getAreaPosts.filter((p) => p.id !== postId);
+        proxy.writeQuery({ 
+          query: FETCH_AREA_QUERY,
+          variables:{ thoughtArea : area}, 
+          data });
       }
       if (callback) callback();
     },

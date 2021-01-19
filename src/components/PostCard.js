@@ -9,9 +9,11 @@ import DeleteButton from './DeleteButton';
 import MyPopup from '../util/MyPopup';
 
 function PostCard({
-  post: { body, createdAt, id, username, likeCount, commentCount, likes }
+  post: { body, createdAt, id, username, likeCount, commentCount, likes } , area
 }) {
   const { user } = useContext(AuthContext);
+  //console.log("===========2.PostCard============");
+  //console.log(area);
 
   return (
     <Card fluid>
@@ -42,7 +44,7 @@ function PostCard({
             </Label>
           </Button>
         </MyPopup>
-        {user && user.username === username && <DeleteButton postId={id} />}
+        {user && user.username === username && <DeleteButton postId={id} area={area}/>}
       </Card.Content>
     </Card>
   );
